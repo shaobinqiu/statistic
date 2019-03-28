@@ -1,9 +1,9 @@
-function plot_n_str_max(n_str_max_p1, n_A, T)
+function plot_n_str_max(n_str_max_p1, n_A, T, A, B)
 figure
  set(gcf,'color','white');
  image(n_str_max_p1,'CDataMapping','scaled')
  title('predict phase(>30%)')
-xlabel('n_{V}')
+xlabel(['n_{' A, '}'])
 ylabel('Temperature(K)')
 colorbar
 n_x1=5;n_y=5;%%%number of axis label
@@ -13,7 +13,7 @@ for ii=1:n_x1
 end
 yl={};
 for ii=1:n_y
-    yl=[yl num2str(max(T)-(ii-1)*max(T)/(n_y-1))]; 
+    yl=[yl num2str(max(T)-(ii-1)*(max(T)-min(T))/(n_y-1))]; 
 end
 set(gca,'XTick',1:(size(n_str_max_p1,2)-1)/(n_x1-1):size(n_str_max_p1,2));
 set(gca,'XTicklabel',xl1)

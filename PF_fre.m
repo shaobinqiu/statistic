@@ -32,4 +32,5 @@ for zz=1:size(mu,2)
     n_mu_T=[n_mu_T;E_n];
 end
 n_mu_T=n_mu_T/max(all_inf(:,2));
+%n_mu_T=n_mu_T/16;
 end
