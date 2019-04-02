@@ -1,7 +1,7 @@
 clear
 h=6.63*10^(-34)/(1.6*10^(-19))/2/3.14; 
 k=1.38*10^(-23)/(1.6*10^(-19));
-all_inf=load('~/Desktop/temp/LiuLu/InGaO/small.txt');% [index number_of_atom_A  energy  degener]
+all_inf=load('~/Desktop/temp/LiuLu/InGaO/scell.txt');% [index number_of_atom_A  energy  degener]
 %all_inf=load('../SiGeH16/files/all_DFT.txt');
 A='Ga';
 B='In';
@@ -11,10 +11,10 @@ cp=30/100;% critical probability of phase diagram
 %frequency=load('../Al13/files/frequency.txt');
 %frequency=load('../SiGeH16/files/frequency.txt');
 T_min=10;
-T_max=5000;T=[T_min:(T_max)/500:T_max+T_min];
+T_max=5000;T=[T_min:(T_max)/200:T_max+T_min];
 nm=1000;%the number of mu points
 %%%%%%%%%%%%%%%%%diff mu area at diff T
-mu_min=[-1;-2.5];mu_max=[-0.9;0.5];
+mu_min=[-0.94;-2.8];mu_max=[-0.91;0.6];
 mu=zeros(size(T,2),nm+1);
 for ii=1:size(mu,1)
     a=ii*[mu_min(2)-mu_min(1)]/size(mu,1)+mu_min(1);
